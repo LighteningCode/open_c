@@ -8,6 +8,13 @@ function SideItem(props) {
 function Sidenav() {
     return (
         <nav className="flex flex-col bg-blue-700 h-full py-12 px-3 w-48">
+            
+            <div className="flex flex-col">
+                <div className="h-0.5 w-5 rounded-lg bg-white mb-1"></div>
+                <div className="h-0.5 w-5 rounded-lg bg-white mb-1"></div>
+                <div className="h-0.5 w-5 rounded-lg bg-white mb-1"></div>
+            </div>
+
             <ul className="list-none mt-16">
                 <SideItem name="News" icon="fa-home" />
                 <SideItem name="Topics" icon="fa-book" />
