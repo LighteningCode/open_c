@@ -7,7 +7,7 @@ function SideItem(props) {
 
 function Sidenav() {
     return (
-        <nav className="flex flex-col bg-blue-700 float-left h-full py-12 px-3 w-48">
+        <nav className="flex flex-col bg-blue-700 h-full py-12 px-3 w-48">
             <ul className="list-none mt-16">
                 <SideItem name="News" icon="fa-home" />
                 <SideItem name="Topics" icon="fa-book" />
