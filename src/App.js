@@ -57,10 +57,10 @@ function Tabs(props) {
   return (
     <section className="w-full h-12 rounded-md bg-white shadow-lg">
       <nav className="flex flex-row h-full px-3 justify-between">
-        <ul className="list-none flex flex-row self-center text-xs font-medium pl-7 text-gray-500">
+        <ul className="list-none flex flex-row self-center cursor-pointer text-xs font-medium pl-7 text-gray-500">
           <li className="mr-6">Answers</li>
           <li className="mr-6">Questions</li>
-          <li className="mr-6">Experts</li>
+          <li className="mr-6 block">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
           <li className="mr-6">Related Tags</li>
         </ul>
 
@@ -115,6 +115,23 @@ function ContentItem(props) {
   )
 }
 
+function RelatedQuestion(props) {
+  return (
+    <div className="flex flex-row mt-2">
+      <div className="flex flex-col text-gray-300 mr-3">
+        <i class="fa fa-chevron-up self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
+        <p className="text-xs self-center" style={{ fontSize: "9px" }}>{props.count}</p>
+        <i class="fa fa-chevron-down self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
+      </div>
+
+      <div className="self-center">
+        <p style={{ fontSize: "9px" }}>{props.question}</p>
+        <button style={{ fontSize: "9px" }} className="px-2 py-0.5 bg-blue-200 rounded-md">Reply</button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <main className="flex flex-row w-full h-full bg-gray-200">
@@ -133,9 +150,22 @@ function App() {
               <ContentItem />
               <ContentItem />
             </div>
+
             <div className="bg-white px-3 py-2 rounded-md shadow-md w-1/3">
-              Related
+              <nav className="flex flex-row justify-between mb-2">
+                <p className="font-semibold text-xs self-center">Related questions</p>
+                <button className="text-xs text-blue-500 self-center transition-all p-1 rounded-md hover:bg-blue-400 hover:text-white">View <i class="fa fa-chevron-right" style={{ fontSize: "9px" }} aria-hidden="true"></i></button>
+              </nav>
+              <hr />
+
+              <div>
+                <RelatedQuestion count="30" question="How to the galaxies move around each other with so much precision?" />
+                <RelatedQuestion count="12" question="Why is the sky blue?" />
+                <RelatedQuestion count="2" question="Where does the sun come from?" />
+              </div>
+
             </div>
+
           </section>
         </div>
       </div>
