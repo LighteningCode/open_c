@@ -25,28 +25,28 @@ function MainHeader() {
 function HeroStat(props) {
   return (
     <div className="flex flex-col mr-14">
-      <h6 className="text-sm font-bold text-white">{props.value}</h6>
-      <p className="text-xs font-normal text-white self-center">{props.title}</p>
+      <h6 className="text-xl font-bold text-white">{props.value}</h6>
+      <p className="text-base font-thin text-white self-center">{props.title}</p>
     </div>
   )
 }
 
 function Hero() {
   return (
-    <section className="relative w-full rounded-md h-64 px-10 mb-3 shadow-lg">
-      <div className="absolute" style={{ zIndex: 300 }}>
-        <h3 className="text-white  mt-10 text-3xl font-bold" >Solar eclipses: <br /> When is the next one?</h3>
+    <section style={{height:"350px"}} className="relative w-full rounded-md h-64 px-10 mb-3 shadow-lg">
+      <div className="absolute flex flex-col justify-between h-full py-6" style={{ zIndex: 300 }}>
+        <h3 className="text-white  mt-5 text-5xl font-bold" >Solar eclipses: <br /> When is the next one?</h3>
 
-        <aside className="flex flex-row mt-8">
+        <aside className="flex flex-row mt-5">
           <HeroStat title="questions" value="1,360" />
           <HeroStat title="answers" value="615" />
           <HeroStat title="views" value="90k" />
         </aside>
 
         <aside className="flex flex-row mt-8">
-          <button className="bg-red-400 text-white px-4 py-2 rounded-md text-xs mr-4 font-medium">Ask a question</button>
-          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-xs mr-4 font-medium"><i className="fa fa-copy mr-1"></i> Subscribe <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">3235</small></button>
-          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-xs mr-4 font-medium"> <i class="fa fa-hand-o-left mr-1"></i> I'm an expert</button>
+          <button className="bg-red-400 text-white px-4 py-2 rounded-md text-sm mr-4 font-medium">Ask a question</button>
+          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-sm mr-4 font-medium"><i className="fa fa-copy mr-1"></i> Subscribe <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">3235</small></button>
+          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-sm mr-4 font-medium"> <i class="fa fa-hand-o-left mr-1"></i> I'm an expert <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">232</small></button>
         </aside>
       </div>
       <img src="./galaxy.jpg" className="absolute rounded-md top-0 left-0 object-cover w-full h-full" />
@@ -82,34 +82,32 @@ function Tag(props) {
   )
 }
 
-function ContentItem(props) {
+function ContentItem({ upvotes, question, tags, answersCount, imgSrc }) {
   return (
     <div className="bg-white px-3 py-2 rounded-md flex flex-col shadow-md mr-4 mb-2 justify-between">
 
       <div className="flex flex-row">
         <div className="flex flex-col text-gray-200 mr-3">
           <i class="fa fa-chevron-up self-center" aria-hidden="true"></i>
-          <p className="text-xs self-center" style={{ fontSize: "9px" }}>216</p>
+          <p className="text-xs self-center" style={{ fontSize: "9px" }}>{upvotes}</p>
           <i class="fa fa-chevron-down self-center" aria-hidden="true"></i>
         </div>
 
         <div className="mr-auto">
-          <p className="font-semibold text-gray-600 text-sm">It is possible to survive in a black hole?</p>
+          <p className="font-semibold text-gray-600 text-sm">{question}</p>
           <aside className="flex flex-row mt-3">
-            <Tag name="Food" />
-            <Tag name="Querying" />
-            <Tag name="Pace" />
+            {tags}
           </aside>
         </div>
 
         <div className="border border-gray-400 p-2 rounded-md">
-          <h3 className="text-center font-bold text-gray-700">24</h3>
+          <h3 className="text-center font-bold text-gray-700">{answersCount}</h3>
           <h3 className="text-center text-xs">answers</h3>
         </div>
       </div>
 
       <div className="relative w-full rounded-md h-40 px-10 mb-3 mt-3">
-        <img src="./galaxy.jpg" className="absolute rounded-md top-0 left-0 object-cover w-full h-full" />
+        <img src={imgSrc} className="absolute rounded-md top-0 left-0 object-cover w-full h-full" />
       </div>
 
     </div>
@@ -148,8 +146,36 @@ function App() {
 
           <section className="w-full mt-4 flex flex-row">
             <div className="w-2/3">
-              <ContentItem />
-              <ContentItem />
+              <ContentItem
+                imgSrc="./blackhole.jpg"
+                answersCount="30"
+                tags={(
+                  <>
+                    <Tag name="space" />
+                    <Tag name="galaxies" />
+                    <Tag name="planet" />
+                  </>
+                )
+                }
+                question="Can we survive a blackhole?"
+                upvotes="50"
+              />
+
+              <ContentItem
+                imgSrc="./earth.jpg"
+                answersCount="27"
+                tags={(
+                  <>
+                    <Tag name="night" />
+                    <Tag name="earth" />
+                    <Tag name="planet" />
+                  </>
+                )
+                }
+                question="How dark is the night side of the earth?"
+                upvotes="125"
+              />
+             
             </div>
 
             <div className="bg-white px-3 py-2 rounded-md shadow-md w-1/3">
