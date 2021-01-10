@@ -33,7 +33,7 @@ function HeroStat(props) {
 
 function Hero() {
   return (
-    <section style={{ height: "350px" }} className="relative w-full rounded-md h-64 px-10 mb-3 shadow-lg">
+    <section style={{ height: "350px" }} className="relative w-full rounded-xl h-64 px-10 mb-3 shadow-lg">
       <div className="absolute flex flex-col justify-between h-full py-6" style={{ zIndex: 300 }}>
         <h3 className="text-white  mt-5 text-5xl font-bold" >Solar eclipses: <br /> When is the next one?</h3>
 
@@ -56,7 +56,7 @@ function Hero() {
 
 function Tabs(props) {
   return (
-    <section className="w-full h-16 rounded-md bg-white shadow-lg">
+    <section className="w-full h-16 rounded-xl bg-white shadow-lg">
       <nav className="flex flex-row h-full px-3 justify-between">
         <ul className="list-none flex flex-row self-center cursor-pointer text-base font-medium pt-2 pl-7 text-gray-500">
           <li className="mr-10">Answers</li>
@@ -84,7 +84,7 @@ function Tag(props) {
 
 function ContentItem({ upvotes, question, tags, answersCount, imgSrc }) {
   return (
-    <div className="bg-white px-3 py-2 rounded-md flex flex-col shadow-md mr-4 mb-2 justify-between">
+    <div className="bg-white px-3 py-2 rounded-xl flex flex-col shadow-md mr-4 mb-2 justify-between">
 
       <div className="flex flex-row">
         <div className="flex flex-col text-gray-300 hover:text-gray-500 cursor-pointer mr-3">
@@ -183,7 +183,7 @@ function App() {
 
             </div>
 
-            <div className="bg-white px-3 py-2 rounded-md shadow-md w-1/3">
+            <div className="bg-white px-3 py-2 pb-7 rounded-xl shadow-md self-start w-1/3">
               <nav className="flex flex-row justify-between mt-2">
                 <p className="font-semibold text-lg self-center text-gray-600">Related questions</p>
                 <button className="text-base text-blue-500 self-center transition-all p-1 rounded-md hover:bg-blue-400 hover:text-white">View <i class="fa fa-chevron-right" style={{ fontSize: "14px" }} aria-hidden="true"></i></button>
