@@ -33,7 +33,7 @@ function HeroStat(props) {
 
 function Hero() {
   return (
-    <section style={{height:"350px"}} className="relative w-full rounded-md h-64 px-10 mb-3 shadow-lg">
+    <section style={{ height: "350px" }} className="relative w-full rounded-md h-64 px-10 mb-3 shadow-lg">
       <div className="absolute flex flex-col justify-between h-full py-6" style={{ zIndex: 300 }}>
         <h3 className="text-white  mt-5 text-5xl font-bold" >Solar eclipses: <br /> When is the next one?</h3>
 
@@ -59,7 +59,7 @@ function Tabs(props) {
     <section className="w-full h-16 rounded-md bg-white shadow-lg">
       <nav className="flex flex-row h-full px-3 justify-between">
         <ul className="list-none flex flex-row self-center cursor-pointer text-base font-medium pt-2 pl-7 text-gray-500">
-          <li className="mr-10">Answers</li> 
+          <li className="mr-10">Answers</li>
           <li className="mr-10">Questions</li>
           <li className="mr-10 block">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
           <li className="mr-10">Related Tags</li>
@@ -116,17 +116,22 @@ function ContentItem({ upvotes, question, tags, answersCount, imgSrc }) {
 
 function RelatedQuestion(props) {
   return (
-    <div className="flex flex-row mt-2">
-      <div className="flex flex-col text-gray-300 mr-3">
-        <i class="fa fa-chevro  n-up self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
-        <p className="text-xs self-center" style={{ fontSize: "9px" }}>{props.count}</p>
-        <i class="fa fa-chevron-down self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
+    <div className="flex flex-col mt-2">
+
+      <div className="flex flex-row">
+        <div className="flex flex-col text-gray-300 mr-3">
+          <i class="fa fa-chevron-up self-center" aria-hidden="true" style={{ fontSize: "11px" }}></i>
+          <p className="text-xs self-center" style={{ fontSize: "11px" }}>{props.count}</p>
+          <i class="fa fa-chevron-down self-center" aria-hidden="true" style={{ fontSize: "11px" }}></i>
+        </div>
+
+        <div className="self-center w-full">
+          <p className="text-base">{props.question}</p>
+        </div>
       </div>
 
-      <div className="self-center">
-        <p style={{ fontSize: "9px" }}>{props.question}</p>
-        <button style={{ fontSize: "9px" }} className="px-2 py-0.5 bg-blue-200 rounded-md">Reply</button>
-      </div>
+      <button className="px-3 self-start py-1 ml-6 mt-2 text-sm hover:bg-blue-500 hover:border-transparent hover:text-white border-blue-400 border-2 text-blue-500 rounded-md"> <i className="fa fa-comment"></i> Reply</button>
+
     </div>
   );
 }
@@ -175,15 +180,15 @@ function App() {
                 question="How dark is the night side of the earth?"
                 upvotes="125"
               />
-             
+
             </div>
 
             <div className="bg-white px-3 py-2 rounded-md shadow-md w-1/3">
-              <nav className="flex flex-row justify-between mb-2">
-                <p className="font-semibold text-xs self-center">Related questions</p>
-                <button className="text-xs text-blue-500 self-center transition-all p-1 rounded-md hover:bg-blue-400 hover:text-white">View <i class="fa fa-chevron-right" style={{ fontSize: "9px" }} aria-hidden="true"></i></button>
+              <nav className="flex flex-row justify-between mt-2">
+                <p className="font-semibold text-lg self-center text-gray-600">Related questions</p>
+                <button className="text-base text-blue-500 self-center transition-all p-1 rounded-md hover:bg-blue-400 hover:text-white">View <i class="fa fa-chevron-right" style={{ fontSize: "14px" }} aria-hidden="true"></i></button>
               </nav>
-              <hr />
+              <hr className="my-4" />
 
               <div>
                 <RelatedQuestion count="30" question="How to the galaxies move around each other with so much precision?" />
