@@ -1,7 +1,10 @@
 
 function SideItem(props) {
     return (
-        <li className="text-white text-base mb-4 px-3 py-4 rounded-lg transition-all hover:bg-blue-400 cursor-pointer"><i className={`mr-2 fa ${props.icon}`}></i>{props.name}</li>
+        <li className="text-white mb-1 px-3 py-4 rounded-lg transition-all hover:bg-blue-400 flex flex-row cursor-pointer">
+            <i className={`mr-2 self-center fa ${props.icon}`}></i>
+            <span className="self-center text-lg">{props.name}</span>
+        </li>
     );
 }
 

@@ -43,13 +43,13 @@ function Hero() {
           <HeroStat title="views" value="90k" />
         </aside>
 
-        <aside className="flex flex-row mt-8">
-          <button className="bg-red-400 text-white px-4 py-2 rounded-md text-sm mr-4 font-medium">Ask a question</button>
-          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-sm mr-4 font-medium"><i className="fa fa-copy mr-1"></i> Subscribe <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">3235</small></button>
-          <button className="bg-white text-blue-900 px-4 py-2 rounded-md text-sm mr-4 font-medium"> <i class="fa fa-hand-o-left mr-1"></i> I'm an expert <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">232</small></button>
+        <aside className="flex flex-row mt-8 text-lg">
+          <button className="bg-red-400 hover:bg-red-600 text-white px-4 py-2 rounded-lg mr-4 font-medium">Ask a question</button>
+          <button className="bg-white text-blue-900 px-4 py-2 rounded-lg mr-4 font-medium"><i className="fa fa-copy mr-1"></i> Subscribe <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">3235</small></button>
+          <button className="bg-white text-blue-900 px-4 py-2 rounded-lg mr-4 font-medium"> <i class="fa fa-hand-o-left mr-1"></i> I'm an expert <small className="bg-red-900 rounded-md ml-2 px-2 py-0.5 text-white">232</small></button>
         </aside>
       </div>
-      <img src="./galaxy.jpg" className="absolute rounded-md top-0 left-0 object-cover w-full h-full" />
+      <img src="./galaxy.jpg" className="absolute rounded-lg top-0 left-0 object-cover w-full h-full" />
     </section>
   )
 }
