@@ -1,9 +1,15 @@
+import { Icon, InlineIcon } from '@iconify/react';
+import newspaperIcon from '@iconify-icons/bi/newspaper';
+import viewList from '@iconify-icons/bi/view-list';
+import patchQuestion from '@iconify-icons/bi/patch-question';
+import arrowLeftRight from '@iconify-icons/bi/arrow-left-right';
+import bookmarkIcon from '@iconify-icons/bi/bookmark';
 
-function SideItem(props) {
+function SideItem({name, icon,active}) {
     return (
-        <li className="text-white mb-1 px-3 py-4 rounded-lg transition-all hover:bg-blue-400 flex flex-row cursor-pointer">
-            <i className={`mr-2 self-center fa ${props.icon}`}></i>
-            <span className="self-center text-lg">{props.name}</span>
+        <li className={`text-white mb-1 px-3 py-4 rounded-lg transition-all ${(active) ? 'bg-blue-400' : ''} hover:bg-blue-400 flex flex-row cursor-pointer`}>
+            <InlineIcon icon={icon} className="self-center mr-3 text-2xl" />
+            <span className="self-center text-lg">{name}</span>
         </li>
     );
 }
@@ -19,11 +25,11 @@ function Sidenav() {
             </div>
 
             <ul className="list-none mt-7">
-                <SideItem name="News" icon="fa-home" />
-                <SideItem name="Topics" icon="fa-book" />
-                <SideItem name="Questions" icon="fa-question-circle" />
-                <SideItem name="Responses" icon="fa-undo" />
-                <SideItem name="Favorites" icon="fa-heart" />
+                <SideItem name="News" icon={newspaperIcon} active={true} />
+                <SideItem name="Topics" icon={viewList} />
+                <SideItem name="Questions" icon={patchQuestion} />
+                <SideItem name="Responses" icon={arrowLeftRight} />
+                <SideItem name="Favorites" icon={bookmarkIcon} />
             </ul>
 
             <div className="bg-blue-100 relative text-center py-8 px-6 rounded-md self-center flex flex-col w-44 mt-24">
