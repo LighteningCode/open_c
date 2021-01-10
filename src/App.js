@@ -12,17 +12,22 @@ function MainHeader() {
       <h3 className="self-center text-2xl font-bold mr-4 w-1/12"><span className="text-blue-300">Open</span>C</h3>
 
       <div className="w-8/12 py-0.5 px-3 flex flex-row bg-gray-100 rounded-lg">
-        <InlineIcon icon={searchIcon} className="self-center mr-2 text-gray-400 text-xl"/>
+        <InlineIcon icon={searchIcon} className="self-center mr-2 text-gray-400 text-xl" />
         <input
           type="text"
           value={null}
           placeholder="Search"
-          className="  h-full w-full bg-transparent" />
+          className="  h-full w-full bg-transparent focus:outline-none" />
       </div>
 
 
       <div className="flex flex-row w-3/12 justify-between ml-6">
-        <InlineIcon icon={bellIcon} className="text-2xl self-center mr-2" />
+
+        <div className="relative self-center cursor-pointer">
+          <InlineIcon icon={bellIcon} className="text-2xl self-center text-gray-600 hover:text-black" />
+          <span style={{width: "10px",height:"10px"}} className="bg-blue-500 rounded-full absolute top-0 right-0">&nbsp;</span>
+        </div>
+
         <div className="flex flex-row self-center">
           <p className="mr-3 text-lg self-center font-medium text-gray-600">Elvis Agbesi</p>
           <img src="./me.jpg" width="30" height="30" className="rounded-full" />
@@ -70,11 +75,11 @@ function Tabs(props) {
   return (
     <section className="w-full h-16 rounded-xl bg-white shadow-lg">
       <nav className="flex flex-row h-full px-3 justify-between">
-        <ul className="list-none flex flex-row self-center cursor-pointer text-base font-medium pt-2 pl-7 text-gray-500">
-          <li className="mr-10">Answers</li>
-          <li className="mr-10">Questions</li>
-          <li className="mr-10 block">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
-          <li className="mr-10">Related Tags</li>
+        <ul className="list-none flex flex-row self-center cursor-pointer text-base font-medium pt-2 pl-7 text-gray-400">
+          <li className="mr-10 hover:text-black">Answers</li>
+          <li className="mr-10 hover:text-black">Questions</li>
+          <li className="mr-10 block text-black">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
+          <li className="mr-10 hover:text-black">Related Tags</li>
         </ul>
 
         <span className="flex flex-row text-base">

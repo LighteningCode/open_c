@@ -16,7 +16,7 @@ function SideItem({name, icon,active}) {
 
 function Sidenav() {
     return (
-        <nav className="flex flex-col bg-blue-700 h-full pt-8 pb-12 px-3 w-60">
+        <nav className="flex flex-col bg-blue-700 h-full pt-8 pb-12 px-3 w-60 float-left">
 
             <div className="flex flex-col transition-all hover:bg-blue-600 rounded-md self-start p-2">
                 <div className="h-0.5 w-5 rounded-lg bg-white my-0.5"></div>
@@ -24,7 +24,7 @@ function Sidenav() {
                 <div className="h-0.5 w-5 rounded-lg bg-white my-0.5"></div>
             </div>
 
-            <ul className="list-none mt-7">
+            <ul className="list-none mt-7 mb-auto">
                 <SideItem name="News" icon={newspaperIcon} active={true} />
                 <SideItem name="Topics" icon={viewList} />
                 <SideItem name="Questions" icon={patchQuestion} />
