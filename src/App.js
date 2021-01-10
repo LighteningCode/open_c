@@ -1,22 +1,34 @@
 import './App.css';
 import Sidenav from './components/Sidenav';
+import { Icon, InlineIcon } from '@iconify/react';
+import bellIcon from '@iconify-icons/bi/bell';
+import searchIcon from '@iconify-icons/bi/search';
+
+
 
 function MainHeader() {
   return (
-    <section className="px-7 py-3 bg-white w-full flex flex-row">
-      <h3 className="self-center text-lg font-bold mr-4">OpenC</h3>
-      <input
-        type="text"
-        value={null}
-        placeholder="Search"
-        style={{ width: "350px" }}
-        className="bg-gray-200 rounded-md py-0.5 px-3 mr-auto" />
+    <section className="px-7 py-3 bg-white w-full flex flex-row justify-between">
+      <h3 className="self-center text-2xl font-bold mr-4 w-1/12"><span className="text-blue-300">Open</span>C</h3>
 
-      <i className="fa fa-bell self-center text-gray-700 mx-2"></i>
-      <div className="flex flex-row self-center">
-        <p className="mr-3 text-lg self-center font-bold text-gray-600">Elvis Agbesi</p>
-        <img src="./me.jpg" width="30" height="30" className="rounded-full" />
+      <div className="w-8/12 py-0.5 px-3 flex flex-row bg-gray-100 rounded-lg">
+        <InlineIcon icon={searchIcon} className="self-center mr-2 text-gray-400 text-xl"/>
+        <input
+          type="text"
+          value={null}
+          placeholder="Search"
+          className="  h-full w-full bg-transparent" />
       </div>
+
+
+      <div className="flex flex-row w-3/12 justify-between ml-6">
+        <InlineIcon icon={bellIcon} className="text-2xl self-center mr-2" />
+        <div className="flex flex-row self-center">
+          <p className="mr-3 text-lg self-center font-medium text-gray-600">Elvis Agbesi</p>
+          <img src="./me.jpg" width="30" height="30" className="rounded-full" />
+        </div>
+      </div>
+
 
     </section>
   )
