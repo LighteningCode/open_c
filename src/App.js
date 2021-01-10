@@ -78,7 +78,7 @@ function Tabs(props) {
 
 function Tag(props) {
   return (
-    <span className="py-1 px-3 mx-2 bg-gray-100 rounded-xl font-semibold text-gray-500" style={{ fontSize: "10px" }}>{props.name}</span>
+    <span className="py-1 px-3 mx-2 cursor-pointer bg-gray-100 hover:bg-gray-300 transition-colors duration-300 rounded-xl font-semibold text-gray-500 hover:text-gray-700" style={{ fontSize: "10px" }}>{props.name}</span>
   )
 }
 
@@ -87,21 +87,21 @@ function ContentItem({ upvotes, question, tags, answersCount, imgSrc }) {
     <div className="bg-white px-3 py-2 rounded-md flex flex-col shadow-md mr-4 mb-2 justify-between">
 
       <div className="flex flex-row">
-        <div className="flex flex-col text-gray-200 mr-3">
+        <div className="flex flex-col text-gray-300 hover:text-gray-500 cursor-pointer mr-3">
           <i class="fa fa-chevron-up self-center" aria-hidden="true"></i>
-          <p className="text-xs self-center" style={{ fontSize: "9px" }}>{upvotes}</p>
+          <p className="text-xs self-center" style={{ fontSize: "12px" }}>{upvotes}</p>
           <i class="fa fa-chevron-down self-center" aria-hidden="true"></i>
         </div>
 
         <div className="mr-auto">
-          <p className="font-semibold text-gray-600 text-sm">{question}</p>
+          <p className="font-semibold text-gray-600 text-xl">{question}</p>
           <aside className="flex flex-row mt-3">
             {tags}
           </aside>
         </div>
-
-        <div className="border border-gray-400 p-2 rounded-md">
-          <h3 className="text-center font-bold text-gray-700">{answersCount}</h3>
+    
+        <div className="border border-gray-300 px-4 py-2 rounded-md">
+          <h3 className="text-center text-xl font-bold text-gray-700">{answersCount}</h3>
           <h3 className="text-center text-xs">answers</h3>
         </div>
       </div>
