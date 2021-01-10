@@ -138,7 +138,7 @@ function RelatedQuestion(props) {
 
 function App() {
   return (
-    <main className="flex flex-row w-full h-full bg-gray-200">
+    <main className="flex flex-row w-full h-full bg-gray-100">
       <div className="relative">
         <Sidenav />
       </div>
