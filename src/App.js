@@ -56,17 +56,17 @@ function Hero() {
 
 function Tabs(props) {
   return (
-    <section className="w-full h-12 rounded-md bg-white shadow-lg">
+    <section className="w-full h-16 rounded-md bg-white shadow-lg">
       <nav className="flex flex-row h-full px-3 justify-between">
-        <ul className="list-none flex flex-row self-center cursor-pointer text-xs font-medium pl-7 text-gray-500">
-          <li className="mr-6">Answers</li>
-          <li className="mr-6">Questions</li>
-          <li className="mr-6 block">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
-          <li className="mr-6">Related Tags</li>
+        <ul className="list-none flex flex-row self-center cursor-pointer text-base font-medium pt-2 pl-7 text-gray-500">
+          <li className="mr-10">Answers</li> 
+          <li className="mr-10">Questions</li>
+          <li className="mr-10 block">Experts <div className="h-0.5 w-full mt-1 bg-blue-800 rounded-md"></div></li>
+          <li className="mr-10">Related Tags</li>
         </ul>
 
-        <span className="flex flex-row text-xs">
-          <p className="self-center mr-3 text-gray-500 font-medium" style={{ fontSize: "9px" }}>Sorting</p>
+        <span className="flex flex-row text-base">
+          <p className="self-center mr-3 text-gray-500 font-medium" style={{ fontSize: "12px" }}>Sorting</p>
           <select className="self-center bg-gray-100 rounded-lg px-2 py-1 w-28">
             <option>Rating</option>
           </select>
@@ -99,7 +99,7 @@ function ContentItem({ upvotes, question, tags, answersCount, imgSrc }) {
             {tags}
           </aside>
         </div>
-    
+
         <div className="border border-gray-300 px-4 py-2 rounded-md">
           <h3 className="text-center text-xl font-bold text-gray-700">{answersCount}</h3>
           <h3 className="text-center text-xs">answers</h3>
@@ -118,7 +118,7 @@ function RelatedQuestion(props) {
   return (
     <div className="flex flex-row mt-2">
       <div className="flex flex-col text-gray-300 mr-3">
-        <i class="fa fa-chevron-up self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
+        <i class="fa fa-chevro  n-up self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
         <p className="text-xs self-center" style={{ fontSize: "9px" }}>{props.count}</p>
         <i class="fa fa-chevron-down self-center" aria-hidden="true" style={{ fontSize: "9px" }}></i>
       </div>
