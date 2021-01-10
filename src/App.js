@@ -8,7 +8,7 @@ import searchIcon from '@iconify-icons/bi/search';
 
 function MainHeader() {
   return (
-    <section className="px-7 py-3 bg-white w-full flex flex-row justify-between">
+    <section className="px-7 py-3 h-16 bg-white w-full flex flex-row justify-between">
       <h3 className="self-center text-2xl font-bold mr-4 w-1/12"><span className="text-blue-300">Open</span>C</h3>
 
       <div className="w-8/12 py-0.5 px-3 flex flex-row bg-gray-100 rounded-lg">
